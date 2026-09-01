@@ -1,24 +1,42 @@
 package com.nkongamoses.studentapplication;
 
 import android.os.Bundle;
+import android.widget.Button;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.List;
 
 public class StudentListActivity extends AppCompatActivity {
+
+    private RecyclerView recyclerViewStudents;
+    private Button btnBackHome;
+
+    private StudentAdapter studentAdapter;
+    private StudentRepository studentRepository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_student_list);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
+        recyclerViewStudents = findViewById(R.id.recyclerViewStudents);
+        btnBackHome = findViewById(R.id.btnBackHome);
+
+        studentRepository = StudentRepository.getInstance();
+
+        List<Student> students = studentRepository.getStudents();
+
+        studentAdapter = new StudentAdapter(students);
+
+        recyclerViewStudents.setLayoutManager(
+                new LinearLayoutManager(this)
+        );
+
+        recyclerViewStudents.setAdapter(studentAdapter);
+
+        btnBackHome.setOnClickListener(v -> finish());
     }
 }

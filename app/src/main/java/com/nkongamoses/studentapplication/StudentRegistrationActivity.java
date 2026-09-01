@@ -21,12 +21,15 @@ public class StudentRegistrationActivity extends AppCompatActivity {
     private Button btnSaveStudent;
     private Button btnBackHome;
 
+    private StudentRepository studentRepository;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_registration);
 
-        // Connect input fields
+        studentRepository = StudentRepository.getInstance();
+
         etStudentId = findViewById(R.id.etStudentId);
         etFirstName = findViewById(R.id.etFirstName);
         etLastName = findViewById(R.id.etLastName);
@@ -38,10 +41,8 @@ public class StudentRegistrationActivity extends AppCompatActivity {
         btnSaveStudent = findViewById(R.id.btnSaveStudent);
         btnBackHome = findViewById(R.id.btnBackHome);
 
-        // Save student
         btnSaveStudent.setOnClickListener(v -> saveStudent());
 
-        // Return to Home
         btnBackHome.setOnClickListener(v -> finish());
     }
 
@@ -55,7 +56,6 @@ public class StudentRegistrationActivity extends AppCompatActivity {
         String dateOfBirth = etDateOfBirth.getText().toString().trim();
         String phone = etPhone.getText().toString().trim();
 
-        // Validation
         if (TextUtils.isEmpty(studentId)) {
             etStudentId.setError("Enter student ID");
             etStudentId.requestFocus();
@@ -98,7 +98,6 @@ public class StudentRegistrationActivity extends AppCompatActivity {
             return;
         }
 
-        // Create Student object
         Student student = new Student(
                 studentId,
                 firstName,
@@ -109,8 +108,8 @@ public class StudentRegistrationActivity extends AppCompatActivity {
                 phone
         );
 
-        // Temporary confirmation
-        // Database storage will be added in the next stage.
+        studentRepository.addStudent(student);
+
         Toast.makeText(
                 this,
                 "Student saved successfully",
