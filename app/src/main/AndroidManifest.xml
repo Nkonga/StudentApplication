@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StudentApplication">
         <activity
+            android:name=".StudentListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StudentRegistrationActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

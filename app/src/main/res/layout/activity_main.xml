@@ -4,92 +4,58 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="24dp"
+    android:gravity="center_horizontal">
 
     <TextView
+        android:id="@+id/tvAppTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Student Application"
-        android:textSize="26sp"
+        android:textSize="28sp"
         android:textStyle="bold"
         android:gravity="center"
-        android:layout_marginBottom="16dp" />
-
-    <EditText
-        android:id="@+id/etStudentId"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Student ID"
-        android:inputType="text"
+        android:layout_marginTop="30dp"
         android:layout_marginBottom="8dp" />
-
-    <EditText
-        android:id="@+id/etFirstName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="First Name"
-        android:inputType="textCapWords"
-        android:layout_marginBottom="8dp" />
-
-    <EditText
-        android:id="@+id/etLastName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Last Name"
-        android:inputType="textCapWords"
-        android:layout_marginBottom="8dp" />
-
-    <EditText
-        android:id="@+id/etGrade"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Grade / Class"
-        android:inputType="text"
-        android:layout_marginBottom="8dp" />
-
-    <EditText
-        android:id="@+id/etGender"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Gender"
-        android:inputType="text"
-        android:layout_marginBottom="8dp" />
-
-    <EditText
-        android:id="@+id/etDateOfBirth"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Date of Birth"
-        android:inputType="date"
-        android:layout_marginBottom="8dp" />
-
-    <EditText
-        android:id="@+id/etPhone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Phone Number"
-        android:inputType="phone"
-        android:layout_marginBottom="8dp" />
-
-    <Button
-        android:id="@+id/btnSaveStudent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="SAVE STUDENT"
-        android:layout_marginBottom="12dp" />
 
     <TextView
+        android:id="@+id/tvWelcome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Registered Students"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="8dp" />
+        android:text="Welcome to the Student Management System"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:layout_marginBottom="35dp" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerStudents"
+    <Button
+        android:id="@+id/btnRegisterStudent"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_height="wrap_content"
+        android:text="REGISTER STUDENT"
+        android:textSize="16sp"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btnViewStudents"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="VIEW STUDENTS"
+        android:textSize="16sp"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btnAbout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ABOUT"
+        android:textSize="16sp"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btnExit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CLOSE APPLICATION"
+        android:textSize="16sp" />
 
 </LinearLayout>
