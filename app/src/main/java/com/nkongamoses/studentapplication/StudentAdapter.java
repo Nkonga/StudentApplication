@@ -11,9 +11,19 @@ import java.util.List;
 public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentViewHolder> {
 
     private List<Student> studentList;
+    private OnStudentClickListener clickListener;
+
+    // Interface for click events
+    public interface OnStudentClickListener {
+        void onStudentClick(Student student);
+    }
 
     public StudentAdapter(List<Student> studentList) {
         this.studentList = studentList;
+    }
+
+    public void setOnStudentClickListener(OnStudentClickListener listener) {
+        this.clickListener = listener;
     }
 
     public void updateStudents(List<Student> students) {
@@ -33,7 +43,13 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
     public void onBindViewHolder(@NonNull StudentViewHolder holder, int position) {
         Student student = studentList.get(position);
 
-        // Use getFullName() helper method
+        // Set click listener
+        holder.itemView.setOnClickListener(v -> {
+            if (clickListener != null) {
+                clickListener.onStudentClick(student);
+            }
+        });
+
         holder.tvStudentName.setText(student.getFullName());
         holder.tvStudentId.setText("ID: " + student.getStudentId());
         holder.tvStudentGrade.setText("Grade: " + student.getGrade());

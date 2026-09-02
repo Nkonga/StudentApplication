@@ -65,6 +65,40 @@ public class StudentRepository {
         });
     }
 
+    public void updateStudent(Student student, SaveCallback callback) {
+
+        databaseExecutor.execute(() -> {
+
+            try {
+
+                studentDao.update(student);
+
+                mainHandler.post(callback::onSuccess);
+
+            } catch (Exception exception) {
+
+                mainHandler.post(() -> callback.onError(exception));
+            }
+        });
+    }
+
+    public void deleteStudent(Student student, SaveCallback callback) {
+
+        databaseExecutor.execute(() -> {
+
+            try {
+
+                studentDao.delete(student);
+
+                mainHandler.post(callback::onSuccess);
+
+            } catch (Exception exception) {
+
+                mainHandler.post(() -> callback.onError(exception));
+            }
+        });
+    }
+
     public void getStudents(StudentsCallback callback) {
 
         databaseExecutor.execute(() -> {
@@ -82,9 +116,7 @@ public class StudentRepository {
         });
     }
 
-    public void getStudentById(
-            String studentId,
-            StudentsCallback callback) {
+    public void getStudentById(String studentId, StudentsCallback callback) {
 
         databaseExecutor.execute(() -> {
 
@@ -107,17 +139,20 @@ public class StudentRepository {
         });
     }
 
-    public void deleteStudent(
-            Student student,
-            SaveCallback callback) {
+    /**
+     * Search for students by name or ID
+     * @param searchQuery The search query (e.g., "John" or "S001")
+     * @param callback Callback with search results
+     */
+    public void searchStudents(String searchQuery, StudentsCallback callback) {
 
         databaseExecutor.execute(() -> {
 
             try {
 
-                studentDao.delete(student);
+                List<Student> students = studentDao.searchStudents(searchQuery);
 
-                mainHandler.post(callback::onSuccess);
+                mainHandler.post(() -> callback.onResult(students));
 
             } catch (Exception exception) {
 

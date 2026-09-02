@@ -25,6 +25,28 @@
 
     </androidx.appcompat.widget.Toolbar>
 
+    <!-- Search Bar -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="2dp">
+
+        <EditText
+            android:id="@+id/etSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="🔍 Search students by name or ID..."
+            android:padding="16dp"
+            android:drawableStart="@android:drawable/ic_menu_search"
+            android:drawablePadding="12dp"
+            android:inputType="text"
+            android:background="@android:color/white"
+            android:textSize="16sp" />
+
+    </androidx.cardview.widget.CardView>
+
     <!-- Counter Badge -->
     <TextView
         android:id="@+id/tvStudentCount"
