@@ -10,6 +10,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btnRegisterStudent;
     private Button btnViewStudents;
+    private Button btnDashboard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         // Initialize buttons
         btnRegisterStudent = findViewById(R.id.btnRegisterStudent);
         btnViewStudents = findViewById(R.id.btnViewStudents);
+        btnDashboard = findViewById(R.id.btnDashboard);
 
         // Register Student button click
         btnRegisterStudent.setOnClickListener(new View.OnClickListener() {
@@ -34,6 +36,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, StudentListActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // Dashboard button click
+        btnDashboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, DashboardActivity.class);
                 startActivity(intent);
             }
         });

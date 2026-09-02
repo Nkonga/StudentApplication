@@ -51,6 +51,19 @@
         android:padding="16dp"
         android:layout_marginBottom="12dp" />
 
+    <!-- Dashboard Button -->
+    <Button
+        android:id="@+id/btnDashboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="📊 Dashboard"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#9C27B0"
+        android:padding="16dp"
+        android:layout_marginBottom="12dp" />
+
     <!-- Version Info -->
     <TextView
         android:layout_width="match_parent"
