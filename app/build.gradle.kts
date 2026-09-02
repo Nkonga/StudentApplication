@@ -43,6 +43,9 @@ dependencies {
     // CardView for better UI
     implementation("androidx.cardview:cardview:1.0.0")
 
+    // SwipeRefreshLayout for Pull-to-Refresh
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+
     // Room Database
     implementation("androidx.room:room-runtime:2.8.4")
     annotationProcessor("androidx.room:room-compiler:2.8.4")

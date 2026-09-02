@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,6 +23,7 @@ public class StudentListActivity extends AppCompatActivity {
     private Button btnBackHome;
     private TextView tvStudentCount;
     private EditText etSearch;
+    private SwipeRefreshLayout swipeRefreshLayout;
     private List<Student> allStudents = new ArrayList<>();
 
     @Override
@@ -36,6 +38,10 @@ public class StudentListActivity extends AppCompatActivity {
         tvStudentCount = findViewById(R.id.tvStudentCount);
         etSearch = findViewById(R.id.etSearch);
         btnBackHome = findViewById(R.id.btnBackHome);
+        swipeRefreshLayout = findViewById(R.id.swipeRefreshLayout);
+
+        // Setup SwipeRefreshLayout
+        setupSwipeRefresh();
 
         btnBackHome.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +55,25 @@ public class StudentListActivity extends AppCompatActivity {
 
         repository = StudentRepository.getInstance(this);
         loadStudents();
+    }
+
+    private void setupSwipeRefresh() {
+        // Set colors for the refresh indicator
+        swipeRefreshLayout.setColorSchemeResources(
+                android.R.color.holo_blue_bright,
+                android.R.color.holo_green_light,
+                android.R.color.holo_orange_light,
+                android.R.color.holo_red_light
+        );
+
+        // Set refresh listener
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                // Refresh the data
+                loadStudents();
+            }
+        });
     }
 
     private void setupSearch() {
@@ -87,6 +112,10 @@ public class StudentListActivity extends AppCompatActivity {
                             "No students found matching: " + query,
                             Toast.LENGTH_SHORT).show();
                 }
+                // Stop refresh if it's still showing
+                if (swipeRefreshLayout.isRefreshing()) {
+                    swipeRefreshLayout.setRefreshing(false);
+                }
             }
 
             @Override
@@ -94,6 +123,9 @@ public class StudentListActivity extends AppCompatActivity {
                 Toast.makeText(StudentListActivity.this,
                         "Search error: " + exception.getMessage(),
                         Toast.LENGTH_SHORT).show();
+                if (swipeRefreshLayout.isRefreshing()) {
+                    swipeRefreshLayout.setRefreshing(false);
+                }
             }
         });
     }
@@ -110,6 +142,14 @@ public class StudentListActivity extends AppCompatActivity {
             public void onResult(List<Student> students) {
                 allStudents = students;
                 updateAdapter(students);
+                // Stop the refresh animation
+                if (swipeRefreshLayout.isRefreshing()) {
+                    swipeRefreshLayout.setRefreshing(false);
+                }
+                // Show toast with refresh count
+                Toast.makeText(StudentListActivity.this,
+                        "✅ Refreshed! " + students.size() + " students found",
+                        Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -117,6 +157,10 @@ public class StudentListActivity extends AppCompatActivity {
                 Toast.makeText(StudentListActivity.this,
                         "Error loading students: " + exception.getMessage(),
                         Toast.LENGTH_SHORT).show();
+                // Stop the refresh animation
+                if (swipeRefreshLayout.isRefreshing()) {
+                    swipeRefreshLayout.setRefreshing(false);
+                }
             }
         });
     }
