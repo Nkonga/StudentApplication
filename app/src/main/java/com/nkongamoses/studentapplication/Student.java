@@ -1,8 +1,15 @@
 package com.nkongamoses.studentapplication;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "students")
 public class Student {
 
+    @PrimaryKey
+    @androidx.annotation.NonNull
     private String studentId;
+
     private String firstName;
     private String lastName;
     private String grade;
@@ -27,6 +34,7 @@ public class Student {
         this.phone = phone;
     }
 
+    @androidx.annotation.NonNull
     public String getStudentId() {
         return studentId;
     }
