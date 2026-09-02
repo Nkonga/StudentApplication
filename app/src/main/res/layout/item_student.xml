@@ -17,176 +17,75 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Student Name - Darker and Bolder -->
+        <!-- Student Name -->
         <TextView
             android:id="@+id/tvStudentName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Student Name"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="#1A1A1A"
-            android:layout_marginBottom="8dp" />
+            android:textColor="#1A1A1A" />
 
         <!-- Divider -->
         <View
             android:layout_width="match_parent"
-            android:layout_height="1.5dp"
-            android:background="#333333"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="12dp" />
+            android:layout_height="1dp"
+            android:background="#E0E0E0"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp" />
 
-        <!-- Student Details with Darker Text -->
+        <!-- Student Details -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="#FAFAFA"
-            android:padding="12dp"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:radius="4dp">
+            android:orientation="vertical">
 
-            <!-- ID -->
-            <LinearLayout
+            <TextView
+                android:id="@+id/tvStudentId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="6dp">
+                android:text="ID: S001"
+                android:textSize="14sp"
+                android:textColor="#333333"
+                android:layout_marginBottom="4dp" />
 
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:text="ID:"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:textColor="#333333" />
-
-                <TextView
-                    android:id="@+id/tvStudentId"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="S001"
-                    android:textSize="14sp"
-                    android:textColor="#1A1A1A"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <!-- Grade -->
-            <LinearLayout
+            <TextView
+                android:id="@+id/tvStudentGrade"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="6dp">
+                android:text="Grade: A"
+                android:textSize="14sp"
+                android:textColor="#333333"
+                android:layout_marginBottom="4dp" />
 
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:text="Grade:"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:textColor="#333333" />
-
-                <TextView
-                    android:id="@+id/tvStudentGrade"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="A"
-                    android:textSize="14sp"
-                    android:textColor="#1A1A1A"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <!-- Gender -->
-            <LinearLayout
+            <TextView
+                android:id="@+id/tvStudentGender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="6dp">
+                android:text="Gender: Male"
+                android:textSize="14sp"
+                android:textColor="#333333"
+                android:layout_marginBottom="4dp" />
 
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:text="Gender:"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:textColor="#333333" />
-
-                <TextView
-                    android:id="@+id/tvStudentGender"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Male"
-                    android:textSize="14sp"
-                    android:textColor="#1A1A1A"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <!-- DOB -->
-            <LinearLayout
+            <TextView
+                android:id="@+id/tvStudentDOB"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="6dp">
+                android:text="DOB: 2000-01-01"
+                android:textSize="14sp"
+                android:textColor="#333333"
+                android:layout_marginBottom="4dp" />
 
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:text="DOB:"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:textColor="#333333" />
-
-                <TextView
-                    android:id="@+id/tvStudentDOB"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="2000-01-01"
-                    android:textSize="14sp"
-                    android:textColor="#1A1A1A"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <!-- Phone -->
-            <LinearLayout
+            <TextView
+                android:id="@+id/tvStudentPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:text="Phone:"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:textColor="#333333" />
-
-                <TextView
-                    android:id="@+id/tvStudentPhone"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="123-456-7890"
-                    android:textSize="14sp"
-                    android:textColor="#1A1A1A"
-                    android:textStyle="bold" />
-            </LinearLayout>
+                android:text="Phone: 123-456-7890"
+                android:textSize="14sp"
+                android:textColor="#333333" />
 
         </LinearLayout>
-
-        <!-- Colored Status Bar at Bottom -->
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="4dp"
-            android:background="@color/colorPrimary"
-            android:layout_marginTop="12dp"
-            android:alpha="0.8" />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

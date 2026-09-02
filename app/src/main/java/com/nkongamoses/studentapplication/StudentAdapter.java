@@ -43,7 +43,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
     public void onBindViewHolder(@NonNull StudentViewHolder holder, int position) {
         Student student = studentList.get(position);
 
-        // Set click listener
+        // THIS IS CRITICAL - Makes the entire card clickable
         holder.itemView.setOnClickListener(v -> {
             if (clickListener != null) {
                 clickListener.onStudentClick(student);

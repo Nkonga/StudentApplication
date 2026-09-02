@@ -65,6 +65,11 @@ public class StudentRepository {
         });
     }
 
+    /**
+     * Update an existing student record
+     * @param student The student object with updated data
+     * @param callback Callback for success or error
+     */
     public void updateStudent(Student student, SaveCallback callback) {
 
         databaseExecutor.execute(() -> {
@@ -82,6 +87,11 @@ public class StudentRepository {
         });
     }
 
+    /**
+     * Delete a student record
+     * @param student The student to delete
+     * @param callback Callback for success or error
+     */
     public void deleteStudent(Student student, SaveCallback callback) {
 
         databaseExecutor.execute(() -> {

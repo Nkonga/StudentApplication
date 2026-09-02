@@ -14,9 +14,17 @@ public interface StudentDao {
     @Insert
     void insert(Student student);
 
+    /**
+     * Update an existing student record
+     * Room automatically uses the primary key (studentId) to find and update the record
+     */
     @Update
     void update(Student student);
 
+    /**
+     * Delete a student record
+     * Room automatically uses the primary key (studentId) to find and delete the record
+     */
     @Delete
     void delete(Student student);
 

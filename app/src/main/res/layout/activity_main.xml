@@ -1,61 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center"
     android:padding="24dp"
-    android:gravity="center_horizontal">
+    android:background="@android:color/white">
 
+    <!-- App Icon/Logo -->
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_marginBottom="16dp" />
+
+    <!-- App Title -->
     <TextView
-        android:id="@+id/tvAppTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Student Application"
-        android:textSize="28sp"
+        android:text="Student Management System"
+        android:textSize="24sp"
         android:textStyle="bold"
+        android:textColor="#1A1A1A"
         android:gravity="center"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginBottom="40dp" />
 
-    <TextView
-        android:id="@+id/tvWelcome"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Welcome to the Student Management System"
-        android:textSize="16sp"
-        android:gravity="center"
-        android:layout_marginBottom="35dp" />
-
+    <!-- Register Student Button -->
     <Button
         android:id="@+id/btnRegisterStudent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="REGISTER STUDENT"
-        android:textSize="16sp"
+        android:text="📝 Register Student"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#4CAF50"
+        android:padding="16dp"
         android:layout_marginBottom="12dp" />
 
+    <!-- View Students Button -->
     <Button
         android:id="@+id/btnViewStudents"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="VIEW STUDENTS"
-        android:textSize="16sp"
+        android:text="📋 View Students"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#2196F3"
+        android:padding="16dp"
         android:layout_marginBottom="12dp" />
 
-    <Button
-        android:id="@+id/btnAbout"
+    <!-- Version Info -->
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ABOUT"
-        android:textSize="16sp"
-        android:layout_marginBottom="12dp" />
-
-    <Button
-        android:id="@+id/btnExit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="CLOSE APPLICATION"
-        android:textSize="16sp" />
+        android:text="Version 1.0"
+        android:textSize="12sp"
+        android:textColor="#999999"
+        android:gravity="center"
+        android:layout_marginTop="40dp" />
 
 </LinearLayout>
