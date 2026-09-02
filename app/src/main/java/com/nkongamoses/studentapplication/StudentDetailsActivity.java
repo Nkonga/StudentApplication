@@ -5,13 +5,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import com.bumptech.glide.Glide;
+import java.io.File;
 
 public class StudentDetailsActivity extends AppCompatActivity {
     private TextView tvFullName, tvStudentId, tvGrade, tvGender, tvDOB, tvPhone;
+    private ImageView ivStudentProfile;
     private Button btnEdit, btnDelete, btnBack;
     private Student student;
     private StudentRepository repository;
@@ -28,14 +32,10 @@ public class StudentDetailsActivity extends AppCompatActivity {
         tvGender = findViewById(R.id.tvGender);
         tvDOB = findViewById(R.id.tvDOB);
         tvPhone = findViewById(R.id.tvPhone);
-
-        // IMPORTANT: These are the buttons!
+        ivStudentProfile = findViewById(R.id.ivStudentProfile);
         btnEdit = findViewById(R.id.btnEdit);
         btnDelete = findViewById(R.id.btnDelete);
         btnBack = findViewById(R.id.btnBack);
-
-        // Debug toast to confirm activity is opening
-        Toast.makeText(this, "Details Activity Opened!", Toast.LENGTH_SHORT).show();
 
         repository = StudentRepository.getInstance(this);
 
@@ -59,6 +59,17 @@ public class StudentDetailsActivity extends AppCompatActivity {
         tvGender.setText("Gender: " + student.getGender());
         tvDOB.setText("Date of Birth: " + student.getDateOfBirth());
         tvPhone.setText("Phone: " + student.getPhone());
+
+        // Load profile image
+        if (student.getProfileImagePath() != null && !student.getProfileImagePath().isEmpty()) {
+            Glide.with(this)
+                    .load(new File(student.getProfileImagePath()))
+                    .circleCrop()
+                    .placeholder(R.drawable.ic_default_profile)
+                    .into(ivStudentProfile);
+        } else {
+            ivStudentProfile.setImageResource(R.drawable.ic_default_profile);
+        }
     }
 
     private void setupButtons() {

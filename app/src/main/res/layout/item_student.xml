@@ -14,78 +14,85 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:orientation="horizontal"
+        android:padding="12dp">
 
-        <!-- Student Name -->
-        <TextView
-            android:id="@+id/tvStudentName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Student Name"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="#1A1A1A" />
+        <!-- Profile Image -->
+        <ImageView
+            android:id="@+id/ivStudentProfile"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_default_profile"
+            android:scaleType="centerCrop"
+            android:background="@android:color/darker_gray"
+            android:padding="2dp" />
 
-        <!-- Divider -->
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#E0E0E0"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp" />
-
-        <!-- Student Details -->
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
 
+            <!-- Student Name -->
             <TextView
-                android:id="@+id/tvStudentId"
+                android:id="@+id/tvStudentName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ID: S001"
-                android:textSize="14sp"
-                android:textColor="#333333"
-                android:layout_marginBottom="4dp" />
+                android:text="Student Name"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#1A1A1A" />
 
-            <TextView
-                android:id="@+id/tvStudentGrade"
+            <!-- Student Details -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Grade: A"
-                android:textSize="14sp"
-                android:textColor="#333333"
-                android:layout_marginBottom="4dp" />
+                android:orientation="vertical"
+                android:layout_marginTop="4dp">
 
-            <TextView
-                android:id="@+id/tvStudentGender"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Gender: Male"
-                android:textSize="14sp"
-                android:textColor="#333333"
-                android:layout_marginBottom="4dp" />
+                <TextView
+                    android:id="@+id/tvStudentId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ID: S001"
+                    android:textSize="12sp"
+                    android:textColor="#666666" />
 
-            <TextView
-                android:id="@+id/tvStudentDOB"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="DOB: 2000-01-01"
-                android:textSize="14sp"
-                android:textColor="#333333"
-                android:layout_marginBottom="4dp" />
+                <TextView
+                    android:id="@+id/tvStudentGrade"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Grade: A"
+                    android:textSize="12sp"
+                    android:textColor="#666666" />
 
-            <TextView
-                android:id="@+id/tvStudentPhone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Phone: 123-456-7890"
-                android:textSize="14sp"
-                android:textColor="#333333" />
+                <TextView
+                    android:id="@+id/tvStudentGender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Gender: Male"
+                    android:textSize="12sp"
+                    android:textColor="#666666" />
+
+                <TextView
+                    android:id="@+id/tvStudentDOB"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="DOB: 2000-01-01"
+                    android:textSize="12sp"
+                    android:textColor="#666666" />
+
+                <TextView
+                    android:id="@+id/tvStudentPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Phone: 123-456-7890"
+                    android:textSize="12sp"
+                    android:textColor="#666666" />
+
+            </LinearLayout>
 
         </LinearLayout>
-
     </LinearLayout>
 </androidx.cardview.widget.CardView>

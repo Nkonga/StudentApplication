@@ -3,9 +3,12 @@ package com.nkongamoses.studentapplication;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import com.bumptech.glide.Glide;
+import java.io.File;
 import java.util.List;
 
 public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentViewHolder> {
@@ -13,7 +16,6 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
     private List<Student> studentList;
     private OnStudentClickListener clickListener;
 
-    // Interface for click events
     public interface OnStudentClickListener {
         void onStudentClick(Student student);
     }
@@ -43,12 +45,22 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
     public void onBindViewHolder(@NonNull StudentViewHolder holder, int position) {
         Student student = studentList.get(position);
 
-        // THIS IS CRITICAL - Makes the entire card clickable
         holder.itemView.setOnClickListener(v -> {
             if (clickListener != null) {
                 clickListener.onStudentClick(student);
             }
         });
+
+        // Load profile image
+        if (student.getProfileImagePath() != null && !student.getProfileImagePath().isEmpty()) {
+            Glide.with(holder.itemView.getContext())
+                    .load(new File(student.getProfileImagePath()))
+                    .circleCrop()
+                    .placeholder(R.drawable.ic_default_profile)
+                    .into(holder.ivStudentProfile);
+        } else {
+            holder.ivStudentProfile.setImageResource(R.drawable.ic_default_profile);
+        }
 
         holder.tvStudentName.setText(student.getFullName());
         holder.tvStudentId.setText("ID: " + student.getStudentId());
@@ -64,6 +76,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
     }
 
     public static class StudentViewHolder extends RecyclerView.ViewHolder {
+        ImageView ivStudentProfile;
         TextView tvStudentName;
         TextView tvStudentId;
         TextView tvStudentGrade;
@@ -73,6 +86,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
 
         public StudentViewHolder(@NonNull View itemView) {
             super(itemView);
+            ivStudentProfile = itemView.findViewById(R.id.ivStudentProfile);
             tvStudentName = itemView.findViewById(R.id.tvStudentName);
             tvStudentId = itemView.findViewById(R.id.tvStudentId);
             tvStudentGrade = itemView.findViewById(R.id.tvStudentGrade);

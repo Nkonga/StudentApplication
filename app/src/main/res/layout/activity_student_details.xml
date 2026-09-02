@@ -20,6 +20,18 @@
         android:layout_marginBottom="16dp"
         android:padding="12dp" />
 
+    <!-- Profile Image -->
+    <ImageView
+        android:id="@+id/ivStudentProfile"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/ic_default_profile"
+        android:scaleType="centerCrop"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:background="@android:color/darker_gray"
+        android:padding="2dp" />
+
     <!-- Student Details Card -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
