@@ -23,12 +23,12 @@ public abstract class AppDatabase extends RoomDatabase {
 
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(
-                                    context.getApplicationContext(),
-                                    AppDatabase.class,
-                                    "student_database"
-                            )
-                            .fallbackToDestructiveMigration()  // Rebuilds database when schema changes
-                            .build();
+                            context.getApplicationContext(),
+                            AppDatabase.class,
+                            "student_database"
+                    )
+                    .fallbackToDestructiveMigration()
+                    .build();
                 }
             }
         }

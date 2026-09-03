@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/studentDetailsRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -32,7 +33,7 @@
         android:background="@android:color/darker_gray"
         android:padding="2dp" />
 
-    <!-- Student Details Card - Compact -->
+    <!-- Student Details Card -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -64,7 +65,7 @@
                 android:background="@color/colorPrimary"
                 android:layout_marginBottom="10dp" />
 
-            <!-- Details in Compact Grid -->
+            <!-- Student ID -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -87,8 +88,10 @@
                     android:text="S001"
                     android:textSize="13sp"
                     android:textColor="#1A1A1A" />
+
             </LinearLayout>
 
+            <!-- Grade -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -111,8 +114,10 @@
                     android:text="A"
                     android:textSize="13sp"
                     android:textColor="#1A1A1A" />
+
             </LinearLayout>
 
+            <!-- Gender -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -135,8 +140,10 @@
                     android:text="Male"
                     android:textSize="13sp"
                     android:textColor="#1A1A1A" />
+
             </LinearLayout>
 
+            <!-- DOB -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -159,8 +166,10 @@
                     android:text="2000-01-01"
                     android:textSize="13sp"
                     android:textColor="#1A1A1A" />
+
             </LinearLayout>
 
+            <!-- Phone -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -182,12 +191,14 @@
                     android:text="123-456-7890"
                     android:textSize="13sp"
                     android:textColor="#1A1A1A" />
+
             </LinearLayout>
 
         </LinearLayout>
+
     </androidx.cardview.widget.CardView>
 
-    <!-- Action Buttons - Compact -->
+    <!-- Action Buttons -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

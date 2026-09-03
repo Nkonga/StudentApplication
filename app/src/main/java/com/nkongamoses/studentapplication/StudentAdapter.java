@@ -43,36 +43,40 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
 
     @Override
     public void onBindViewHolder(@NonNull StudentViewHolder holder, int position) {
-        Student student = studentList.get(position);
+        try {
+            Student student = studentList.get(position);
 
-        holder.itemView.setOnClickListener(v -> {
-            if (clickListener != null) {
-                clickListener.onStudentClick(student);
+            holder.itemView.setOnClickListener(v -> {
+                if (clickListener != null) {
+                    clickListener.onStudentClick(student);
+                }
+            });
+
+            // Load profile image
+            if (student.getProfileImagePath() != null && !student.getProfileImagePath().isEmpty()) {
+                Glide.with(holder.itemView.getContext())
+                        .load(new File(student.getProfileImagePath()))
+                        .circleCrop()
+                        .placeholder(R.drawable.ic_default_profile)
+                        .into(holder.ivStudentProfile);
+            } else {
+                holder.ivStudentProfile.setImageResource(R.drawable.ic_default_profile);
             }
-        });
 
-        // Load profile image
-        if (student.getProfileImagePath() != null && !student.getProfileImagePath().isEmpty()) {
-            Glide.with(holder.itemView.getContext())
-                    .load(new File(student.getProfileImagePath()))
-                    .circleCrop()
-                    .placeholder(R.drawable.ic_default_profile)
-                    .into(holder.ivStudentProfile);
-        } else {
-            holder.ivStudentProfile.setImageResource(R.drawable.ic_default_profile);
+            holder.tvStudentName.setText(student.getFullName());
+            holder.tvStudentId.setText("ID: " + student.getStudentId());
+            holder.tvStudentGrade.setText("Grade: " + student.getGrade());
+            holder.tvStudentGender.setText("Gender: " + student.getGender());
+            holder.tvStudentDOB.setText("DOB: " + student.getDateOfBirth());
+            holder.tvStudentPhone.setText("Phone: " + student.getPhone());
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-
-        holder.tvStudentName.setText(student.getFullName());
-        holder.tvStudentId.setText("ID: " + student.getStudentId());
-        holder.tvStudentGrade.setText("Grade: " + student.getGrade());
-        holder.tvStudentGender.setText("Gender: " + student.getGender());
-        holder.tvStudentDOB.setText("DOB: " + student.getDateOfBirth());
-        holder.tvStudentPhone.setText("Phone: " + student.getPhone());
     }
 
     @Override
     public int getItemCount() {
-        return studentList.size();
+        return studentList != null ? studentList.size() : 0;
     }
 
     public static class StudentViewHolder extends RecyclerView.ViewHolder {

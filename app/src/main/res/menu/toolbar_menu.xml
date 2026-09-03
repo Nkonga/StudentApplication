@@ -16,23 +16,19 @@
 
     <item
         android:id="@+id/action_more"
-        android:icon="@drawable/ic_more_vert_white"
         android:title="More"
-        app:showAsAction="ifRoom">
+        android:icon="@drawable/ic_more_vert_white"
+        app:showAsAction="always">
+
         <menu>
+
             <item
                 android:id="@+id/action_export"
-                android:title="Export Data" />
-            <item
-                android:id="@+id/action_settings"
-                android:title="Settings" />
-            <item
-                android:id="@+id/action_help"
-                android:title="Help" />
-            <item
-                android:id="@+id/action_about"
-                android:title="About" />
+                android:title="Export Data"
+                android:showAsAction="never" />
+
         </menu>
+
     </item>
 
 </menu>

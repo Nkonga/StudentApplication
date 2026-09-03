@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_more"
+        android:title="More"
+        android:icon="@drawable/ic_more_vert_white"
+        app:showAsAction="always">
+
+        <menu>
+
+            <item
+                android:id="@+id/action_settings"
+                android:title="Settings"
+                android:showAsAction="never" />
+
+            <item
+                android:id="@+id/action_help"
+                android:title="Help"
+                android:showAsAction="never" />
+
+            <item
+                android:id="@+id/action_about"
+                android:title="About"
+                android:showAsAction="never" />
+
+            <item
+                android:id="@+id/action_exit"
+                android:title="Exit"
+                android:showAsAction="never" />
+
+        </menu>
+
+    </item>
+
+</menu>
