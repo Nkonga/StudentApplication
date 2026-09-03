@@ -17,42 +17,42 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp"
-        android:paddingBottom="80dp">
+        android:padding="12dp"
+        android:paddingBottom="60dp">
 
-      <!-- Title -->
+      <!-- Title - Smaller -->
       <TextView
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:text="📝 Register Student"
-          android:textSize="24sp"
+          android:textSize="20sp"
           android:textStyle="bold"
           android:textColor="#1A1A1A"
           android:gravity="center"
-          android:layout_marginBottom="20dp" />
+          android:layout_marginBottom="12dp" />
 
-      <!-- Profile Image Section -->
+      <!-- Profile Image Section - Compact -->
       <androidx.cardview.widget.CardView
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           app:cardCornerRadius="8dp"
           app:cardElevation="2dp"
-          android:layout_marginBottom="16dp">
+          android:layout_marginBottom="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center"
-            android:padding="16dp">
+            android:padding="10dp">
 
           <ImageView
               android:id="@+id/ivProfileImage"
-              android:layout_width="120dp"
-              android:layout_height="120dp"
+              android:layout_width="80dp"
+              android:layout_height="80dp"
               android:src="@drawable/ic_default_profile"
               android:scaleType="centerCrop"
-              android:layout_marginBottom="8dp"
+              android:layout_marginBottom="4dp"
               android:background="@android:color/darker_gray"
               android:padding="2dp" />
 
@@ -61,9 +61,9 @@
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:text="📸 Select Photo"
-              android:textSize="14sp"
+              android:textSize="12sp"
               android:backgroundTint="#2196F3"
-              android:padding="8dp" />
+              android:padding="6dp" />
 
         </LinearLayout>
       </androidx.cardview.widget.CardView>
@@ -74,33 +74,33 @@
           android:layout_height="wrap_content"
           app:cardCornerRadius="8dp"
           app:cardElevation="2dp"
-          android:layout_marginBottom="12dp">
+          android:layout_marginBottom="8dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="4dp">
+            android:padding="2dp">
 
           <TextView
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:text="Student ID"
-              android:textSize="14sp"
+              android:textSize="12sp"
               android:textStyle="bold"
               android:textColor="#333333"
               android:layout_marginStart="12dp"
-              android:layout_marginTop="8dp" />
+              android:layout_marginTop="4dp" />
 
           <EditText
               android:id="@+id/etStudentId"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:hint="Enter Student ID (e.g., S001)"
+              android:hint="Enter Student ID"
               android:inputType="text"
-              android:padding="14dp"
+              android:padding="12dp"
               android:background="@android:color/transparent"
-              android:textSize="16sp" />
+              android:textSize="14sp" />
 
         </LinearLayout>
       </androidx.cardview.widget.CardView>
@@ -111,23 +111,23 @@
           android:layout_height="wrap_content"
           app:cardCornerRadius="8dp"
           app:cardElevation="2dp"
-          android:layout_marginBottom="12dp">
+          android:layout_marginBottom="8dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="4dp">
+            android:padding="2dp">
 
           <TextView
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:text="First Name"
-              android:textSize="14sp"
+              android:textSize="12sp"
               android:textStyle="bold"
               android:textColor="#333333"
               android:layout_marginStart="12dp"
-              android:layout_marginTop="8dp" />
+              android:layout_marginTop="4dp" />
 
           <EditText
               android:id="@+id/etFirstName"
@@ -135,9 +135,9 @@
               android:layout_height="wrap_content"
               android:hint="Enter First Name"
               android:inputType="textPersonName"
-              android:padding="14dp"
+              android:padding="12dp"
               android:background="@android:color/transparent"
-              android:textSize="16sp" />
+              android:textSize="14sp" />
 
         </LinearLayout>
       </androidx.cardview.widget.CardView>
@@ -148,23 +148,23 @@
           android:layout_height="wrap_content"
           app:cardCornerRadius="8dp"
           app:cardElevation="2dp"
-          android:layout_marginBottom="12dp">
+          android:layout_marginBottom="8dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="4dp">
+            android:padding="2dp">
 
           <TextView
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:text="Last Name"
-              android:textSize="14sp"
+              android:textSize="12sp"
               android:textStyle="bold"
               android:textColor="#333333"
               android:layout_marginStart="12dp"
-              android:layout_marginTop="8dp" />
+              android:layout_marginTop="4dp" />
 
           <EditText
               android:id="@+id/etLastName"
@@ -172,173 +172,191 @@
               android:layout_height="wrap_content"
               android:hint="Enter Last Name"
               android:inputType="textPersonName"
-              android:padding="14dp"
+              android:padding="12dp"
               android:background="@android:color/transparent"
-              android:textSize="16sp" />
+              android:textSize="14sp" />
 
         </LinearLayout>
       </androidx.cardview.widget.CardView>
 
-      <!-- Grade -->
-      <androidx.cardview.widget.CardView
+      <!-- Grade and Gender - Side by Side -->
+      <LinearLayout
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          app:cardCornerRadius="8dp"
-          app:cardElevation="2dp"
-          android:layout_marginBottom="12dp">
+          android:orientation="horizontal"
+          android:layout_marginBottom="8dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="4dp">
+            android:layout_weight="1"
+            android:layout_marginEnd="4dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
 
-          <TextView
+          <LinearLayout
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:text="Grade"
-              android:textSize="14sp"
-              android:textStyle="bold"
-              android:textColor="#333333"
-              android:layout_marginStart="12dp"
-              android:layout_marginTop="8dp" />
+              android:orientation="vertical"
+              android:padding="2dp">
 
-          <EditText
-              android:id="@+id/etGrade"
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Grade"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="4dp" />
+
+            <EditText
+                android:id="@+id/etGrade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="e.g., A"
+                android:inputType="text"
+                android:padding="12dp"
+                android:background="@android:color/transparent"
+                android:textSize="14sp" />
+
+          </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="4dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+
+          <LinearLayout
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:hint="Enter Grade (e.g., A, B+, C)"
-              android:inputType="text"
-              android:padding="14dp"
-              android:background="@android:color/transparent"
-              android:textSize="16sp" />
+              android:orientation="vertical"
+              android:padding="2dp">
 
-        </LinearLayout>
-      </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gender"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="4dp" />
 
-      <!-- Gender -->
-      <androidx.cardview.widget.CardView
+            <EditText
+                android:id="@+id/etGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="e.g., Male"
+                android:inputType="text"
+                android:padding="12dp"
+                android:background="@android:color/transparent"
+                android:textSize="14sp" />
+
+          </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+      </LinearLayout>
+
+      <!-- DOB and Phone - Side by Side -->
+      <LinearLayout
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          app:cardCornerRadius="8dp"
-          app:cardElevation="2dp"
-          android:layout_marginBottom="12dp">
+          android:orientation="horizontal"
+          android:layout_marginBottom="10dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="4dp">
+            android:layout_weight="1"
+            android:layout_marginEnd="4dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
 
-          <TextView
+          <LinearLayout
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:text="Gender"
-              android:textSize="14sp"
-              android:textStyle="bold"
-              android:textColor="#333333"
-              android:layout_marginStart="12dp"
-              android:layout_marginTop="8dp" />
+              android:orientation="vertical"
+              android:padding="2dp">
 
-          <EditText
-              android:id="@+id/etGender"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:hint="Enter Gender (e.g., Male, Female, Other)"
-              android:inputType="text"
-              android:padding="14dp"
-              android:background="@android:color/transparent"
-              android:textSize="16sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DOB"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="4dp" />
 
-        </LinearLayout>
-      </androidx.cardview.widget.CardView>
+            <EditText
+                android:id="@+id/etDateOfBirth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="YYYY-MM-DD"
+                android:inputType="date"
+                android:padding="12dp"
+                android:background="@android:color/transparent"
+                android:textSize="14sp" />
 
-      <!-- Date of Birth -->
-      <androidx.cardview.widget.CardView
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          app:cardCornerRadius="8dp"
-          app:cardElevation="2dp"
-          android:layout_marginBottom="12dp">
+          </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="4dp">
+            android:layout_weight="1"
+            android:layout_marginStart="4dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
 
-          <TextView
+          <LinearLayout
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:text="Date of Birth"
-              android:textSize="14sp"
-              android:textStyle="bold"
-              android:textColor="#333333"
-              android:layout_marginStart="12dp"
-              android:layout_marginTop="8dp" />
+              android:orientation="vertical"
+              android:padding="2dp">
 
-          <EditText
-              android:id="@+id/etDateOfBirth"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:hint="YYYY-MM-DD (e.g., 2000-01-15)"
-              android:inputType="date"
-              android:padding="14dp"
-              android:background="@android:color/transparent"
-              android:textSize="16sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Phone"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="4dp" />
 
-        </LinearLayout>
-      </androidx.cardview.widget.CardView>
+            <EditText
+                android:id="@+id/etPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone Number"
+                android:inputType="phone"
+                android:padding="12dp"
+                android:background="@android:color/transparent"
+                android:textSize="14sp" />
 
-      <!-- Phone -->
-      <androidx.cardview.widget.CardView
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          app:cardCornerRadius="8dp"
-          app:cardElevation="2dp"
-          android:layout_marginBottom="20dp">
+          </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="4dp">
+      </LinearLayout>
 
-          <TextView
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:text="Phone Number"
-              android:textSize="14sp"
-              android:textStyle="bold"
-              android:textColor="#333333"
-              android:layout_marginStart="12dp"
-              android:layout_marginTop="8dp" />
-
-          <EditText
-              android:id="@+id/etPhone"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:hint="Enter Phone Number"
-              android:inputType="phone"
-              android:padding="14dp"
-              android:background="@android:color/transparent"
-              android:textSize="16sp" />
-
-        </LinearLayout>
-      </androidx.cardview.widget.CardView>
-
-      <!-- Save Button -->
+      <!-- Save Button - Compact -->
       <Button
           android:id="@+id/btnSave"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:text="💾 SAVE STUDENT"
-          android:textSize="18sp"
+          android:text="💾 SAVE"
+          android:textSize="16sp"
           android:textStyle="bold"
           android:textColor="@android:color/white"
           android:backgroundTint="#2196F3"
-          android:padding="16dp"
-          android:layout_marginTop="8dp" />
+          android:padding="12dp"
+          android:layout_marginTop="4dp" />
 
     </LinearLayout>
   </ScrollView>

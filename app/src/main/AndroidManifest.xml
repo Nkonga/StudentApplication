@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+        android:theme="@style/Theme.StudentApplication"
+        android:supportsRtl="true"
+        tools:targetApi="31">
 
         <!-- Main Activity - Launcher -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -24,6 +28,7 @@
             android:exported="false"
             android:label="Register Student"
             android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
 
         <!-- Student List Activity -->
@@ -31,21 +36,24 @@
             android:name=".StudentListActivity"
             android:exported="false"
             android:label="Student List"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
 
         <!-- Student Details Activity -->
         <activity
             android:name=".StudentDetailsActivity"
             android:exported="false"
             android:label="Student Details"
-            android:parentActivityName=".StudentListActivity" />
+            android:parentActivityName=".StudentListActivity"
+            android:screenOrientation="portrait" />
 
         <!-- Dashboard Activity -->
         <activity
             android:name=".DashboardActivity"
             android:exported="false"
             android:label="Dashboard"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
 
     </application>
 
